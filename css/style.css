@@ -2,6 +2,6 @@
 
 
 
-#spiced_beef_form {
+form[id*="form"] {
     display:none;
 }
