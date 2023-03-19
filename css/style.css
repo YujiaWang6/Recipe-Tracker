@@ -1,5 +1,8 @@
 
-
+#manu-container {
+    display:flex;
+    justify-content:space-between;
+}
 
 
 form[id*="form"] {

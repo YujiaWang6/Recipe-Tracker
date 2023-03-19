@@ -15,7 +15,13 @@ function pageReady(){
     //creating the functions
     function spiced_beef()
     {
-        formhandle1.style.display="block";
+        if(formhandle1.style.display==="none")
+        {
+            formhandle1.style.display="block";
+        }else
+        {
+            formhandle1.style.display="none";
+        }
     };
 
     function ingredient1()
@@ -52,7 +58,12 @@ function pageReady(){
    //creating the functions
    function beef_tomato()
    {
-        formhandle3.style.display="block";
+        if(formhandle3.style.display==="none"){
+            formhandle3.style.display="block";
+        }else{
+            formhandle3.style.display="none";
+        }
+        
    };
 
    function  ingredient3()
