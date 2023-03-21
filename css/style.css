@@ -8,3 +8,13 @@
 form[id*="form"] {
     display:none;
 }
+
+#print {
+    position:absolute;
+    right:50px;
+    top:20px;
+    border:none;
+    background-color: rgb(218, 151, 162);
+    color:white;
+    font-size:40px;
+}

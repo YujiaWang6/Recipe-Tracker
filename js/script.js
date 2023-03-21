@@ -43,6 +43,37 @@ function pageReady(){
     };
 
 
+    //form2 -Hot And Sour Noodles
+    //setting variables
+    var hot_sour_noodles_image = document.getElementById("hot_and_sour_noodles_image");
+    var dish2 = document.getElementById("list2");
+    var formhandle2 = document.forms.form_dish2;
+
+    //setting up the listeners
+    formhandle2.onsubmit = ingredient2;
+    hot_sour_noodles_image.onclick = noodles;
+
+    //creating the functions
+    function noodles()
+    {
+        if(formhandle2.style.display ==="none"){
+            formhandle2.style.display = "block";
+        }else{
+            formhandle2.style.display = "none";
+        }
+    };
+
+    function ingredient2(){
+        var string2 = "";
+        for (var j=1; j<formhandle2.length-1; j++){
+            if(formhandle2[j].checked === false){
+                string2 = string2 + "<div>" + formhandle2[j].value + "</div>";
+            }
+        };
+        dish2.innerHTML = string2;
+        formhandle2.style.display = "none";
+        return false
+    };
 
     //form3 - Beef With Tomato Stew
    //setting variables
@@ -83,6 +114,16 @@ function pageReady(){
         formhandle3.style.display = "none";
         return false;
    }
+
+   //print out the ingredients
+   var printBtn = document.getElementById("print");
+
+   printBtn.onclick = printOut;
+
+   function printOut(){
+    window.print();
+   }
+
    
 
 }
