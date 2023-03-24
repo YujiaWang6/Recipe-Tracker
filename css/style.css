@@ -1,20 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@400;500;600;700&display=swap');
+html {
+    font-size:1.25em;
+    font-family: 'Edu SA Beginner', cursive;
+    background-color: #fff1ca;
+    margin:0;
+}
+
+body{
+    margin:0;
+}
 
 #manu-container {
     display:flex;
     justify-content:space-between;
+    padding:0 5em;
 }
 
+
+h1 {
+    text-align:center;
+    margin:0;
+    padding:1em;
+}
+
+h2 {
+    margin:0;
+}
+
+#instruction {
+    padding:0 5em;
+}
 
 form[id*="form"] {
     display:none;
 }
 
+.listBtn{
+    background-color: #f8bab8;
+    font-size:1em;
+    margin:0.5em 0;
+    font-family: 'Edu SA Beginner', cursive;
+    padding:5px 10px;
+}
+
+.listBtn:hover {
+    background-color: #f4908d;
+    
+}
+.listBtn:active {
+    background-color: #bb5551;
+}
+
 #print {
     position:absolute;
-    right:50px;
-    top:20px;
+    right:1em;
+    top:1em;
     border:none;
     background-color: rgb(218, 151, 162);
     color:white;
-    font-size:40px;
+    font-size:1.7em;
+    font-family: 'Edu SA Beginner', cursive;
+    border-radius: 10px;
+    padding: 5px 10px;
 }
+
+#print:hover {
+    background-color: rgb(210, 95, 114);
+    
+}
+
+#print:active {
+    background-color: rgb(148, 46, 63);
+}
+
+#footer {
+    margin:0;
+    padding:1em 5em;
+}
+
+@media print {
+    img{
+        display:none;
+    }
+
+    #instruction {
+        display:none;
+    }
+
+    #manu-container{
+        gap:20px;
+        padding: 0 0.5em;
+
+    }
+
+    .dish {
+        border:solid 2px;
+        padding: 5px;
+    }
+
+    #footer {
+        padding: 0 0.5em;
+    }
+
+
+}
+

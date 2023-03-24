@@ -121,7 +121,10 @@ function pageReady(){
    printBtn.onclick = printOut;
 
    function printOut(){
+    var h1 = document.getElementById("mainHeader")
+    h1.innerHTML = "Shopping List!"
     window.print();
+    h1.innerHTML = "Recipe Tracker"
    }
 
    
