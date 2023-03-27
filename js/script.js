@@ -11,7 +11,7 @@ function pageReady(){
     //setting up the listeners
     formhandle1.onsubmit = ingredient1;
     spiced_beef_image.onclick = spiced_beef;
-    
+
     //creating the functions
     function spiced_beef()
     {
@@ -24,9 +24,10 @@ function pageReady(){
         }
     };
 
+    var string1="";
     function ingredient1()
     {
-        var string1="";
+
 
         for(var i=1; i<formhandle1.length-1;i++)
         {
@@ -63,8 +64,9 @@ function pageReady(){
         }
     };
 
+    var string2 = "";
     function ingredient2(){
-        var string2 = "";
+        
         for (var j=1; j<formhandle2.length-1; j++){
             if(formhandle2[j].checked === false){
                 string2 = string2 + "<div>" + formhandle2[j].value + "</div>";
@@ -73,6 +75,7 @@ function pageReady(){
         dish2.innerHTML = string2;
         formhandle2.style.display = "none";
         return false
+
     };
 
     //form3 - Beef With Tomato Stew
@@ -97,9 +100,10 @@ function pageReady(){
         
    };
 
+   var string3 = "";
    function  ingredient3()
    {
-        var string3 = "";
+
 
         for(var k=1;k<formhandle3.length-1;k++)
         {
@@ -115,16 +119,37 @@ function pageReady(){
         return false;
    }
 
+
    //print out the ingredients
    var printBtn = document.getElementById("print");
+
+
 
    printBtn.onclick = printOut;
 
    function printOut(){
     var h1 = document.getElementById("mainHeader")
     h1.innerHTML = "Shopping List!"
+    var dishforms = document.getElementsByClassName("dish");
+    if(string1===""){
+        dishforms[0].style.display = "none";
+    }
+    if(string2===""){
+        dishforms[1].style.display = "none";
+    }
+    if(string3===""){
+        dishforms[2].style.display = "none";
+    }
+
+    var manus_container = document.getElementById("manu-container");
+    manus_container.style.justifyContent= "center";
+
     window.print();
     h1.innerHTML = "Recipe Tracker"
+    dishforms[0].style.display = "block";
+    dishforms[1].style.display = "block";
+    dishforms[2].style.display = "block";
+    manus_container.style.justifyContent= "space-between";
    }
 
    
