@@ -1,3 +1,4 @@
+//window load
 window.onload = pageReady;
 
 function pageReady(){
@@ -13,6 +14,7 @@ function pageReady(){
     spiced_beef_image.onclick = spiced_beef;
 
     //creating the functions
+    //Click the image to show or hide the form
     function spiced_beef()
     {
         if(formhandle1.style.display==="none")
@@ -24,10 +26,10 @@ function pageReady(){
         }
     };
 
+    //Looping through the form to grab all the values of unchecked box and concatenate to a string
     var string1="";
     function ingredient1()
     {
-
 
         for(var i=1; i<formhandle1.length-1;i++)
         {
@@ -55,6 +57,7 @@ function pageReady(){
     hot_sour_noodles_image.onclick = noodles;
 
     //creating the functions
+    //Click the image to show or hide the form
     function noodles()
     {
         if(formhandle2.style.display ==="none"){
@@ -64,6 +67,7 @@ function pageReady(){
         }
     };
 
+    //Looping through the form to grab all the values of unchecked box and concatenate to a string
     var string2 = "";
     function ingredient2(){
         
@@ -90,6 +94,7 @@ function pageReady(){
 
 
    //creating the functions
+   //Click the image to show or hide the form
    function beef_tomato()
    {
         if(formhandle3.style.display==="none"){
@@ -99,11 +104,10 @@ function pageReady(){
         }
         
    };
-
+    //Looping through the form to grab all the values of unchecked box and concatenate to a string
    var string3 = "";
    function  ingredient3()
    {
-
 
         for(var k=1;k<formhandle3.length-1;k++)
         {
@@ -123,33 +127,37 @@ function pageReady(){
    //print out the ingredients
    var printBtn = document.getElementById("print");
 
-
-
    printBtn.onclick = printOut;
 
+   //hide all the non-relative elements while printing
    function printOut(){
-    var h1 = document.getElementById("mainHeader")
-    h1.innerHTML = "Shopping List!"
-    var dishforms = document.getElementsByClassName("dish");
-    if(string1===""){
-        dishforms[0].style.display = "none";
-    }
-    if(string2===""){
-        dishforms[1].style.display = "none";
-    }
-    if(string3===""){
-        dishforms[2].style.display = "none";
-    }
+        var h1 = document.getElementById("mainHeader")
+        //change the heading to be shopping list
+        h1.innerHTML = "Shopping List!"
+        //check the concatenate string and hide all the non-choosing dishes
+        var dishforms = document.getElementsByClassName("dish");
+        if(string1===""){
+            dishforms[0].style.display = "none";
+        }
+        if(string2===""){
+            dishforms[1].style.display = "none";
+        }
+        if(string3===""){
+            dishforms[2].style.display = "none";
+        }
 
-    var manus_container = document.getElementById("manu-container");
-    manus_container.style.justifyContent= "center";
+        //rearrange the container position while printing
+        var manus_container = document.getElementById("manu-container");
+        manus_container.style.justifyContent= "center";
 
-    window.print();
-    h1.innerHTML = "Recipe Tracker"
-    dishforms[0].style.display = "block";
-    dishforms[1].style.display = "block";
-    dishforms[2].style.display = "block";
-    manus_container.style.justifyContent= "space-between";
+        window.print();
+        
+        //after printing, change back to recipe tracker and show all the hided elements
+        h1.innerHTML = "Recipe Tracker"
+        dishforms[0].style.display = "block";
+        dishforms[1].style.display = "block";
+        dishforms[2].style.display = "block";
+        manus_container.style.justifyContent= "space-between";
    }
 
    

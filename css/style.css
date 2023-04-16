@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@400;500;600;700&display=swap');
+/*--General--*/
 html {
     font-size:1.25em;
     font-family: 'Edu SA Beginner', cursive;
@@ -26,10 +27,17 @@ h1 {
 h2 {
     margin:0;
 }
-
+/*--Instruction--*/
 #instruction {
     padding:0 5em;
 }
+
+/*--Form Details--*/
+img {
+    max-width:100%;
+    height:auto;
+}
+
 
 form[id*="form"] {
     display:none;
@@ -51,6 +59,7 @@ form[id*="form"] {
     background-color: #bb5551;
 }
 
+/*--Print button--*/
 #print {
     position:absolute;
     right:1em;
@@ -73,11 +82,37 @@ form[id*="form"] {
     background-color: rgb(148, 46, 63);
 }
 
+/*--Footer--*/
 #footer {
     margin:0;
     padding:1em 5em;
 }
 
+/*--Media Queries--*/
+@media screen and (max-width:768px){
+
+    #manu-container {
+        padding:0 1em;
+    }
+    #instruction {
+        padding:0 1em;
+    }
+}
+
+@media screen and (max-width:680px){
+    #manu-container {
+
+        flex-direction: column;
+        align-items: center;
+
+    }
+    #print {
+        right:0.5em;
+        font-size: 1.2em;;
+    }
+}
+
+/*--Printing format--*/
 @media print {
     img{
         display:none;
